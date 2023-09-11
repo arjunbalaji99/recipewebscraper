@@ -1,6 +1,6 @@
 **Recipe Scraping Ingredient Compiler**
 
-<h1 align="center">Material Bread</h1>
+<h1 style="text-align: center">Material Bread</h1>
 
 
 Overview
