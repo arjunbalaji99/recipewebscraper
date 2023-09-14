@@ -58,7 +58,9 @@ def scrape_recipe_data(recipe_url):
 
 #calculates and prints the 10 most common ingredients from a list of ingredients
 def calculate_most_common(all_ingredients):
-    most_common_ingredients = Counter(all_ingredients).most_common(10)
+    return Counter(all_ingredients).most_common(10)
+
+def print_most_common(most_common_ingredients):
     for ingredient in most_common_ingredients:
         print(str(ingredient[0]).capitalize() + " - " + str(ingredient[1]) + " occurrences")
 
@@ -85,6 +87,8 @@ def user_interaction():
         all_ingredients.extend(ingredients)
     
     print("Here are the 10 most common ingredients of the recipes on that page!")
-    calculate_most_common(all_ingredients)
+    most_common_ingredients = calculate_most_common(all_ingredients)
+    print_most_common(most_common_ingredients)
 
-user_interaction()
+if __name__ == "__main__":
+    user_interaction()

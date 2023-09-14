@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipe Ingredients Scraper</title>
+</head>
+<body>
+    <h1>Common Ingredients</h1>
+    <h2>Page Url: {{ url }}</h2>
+    <ul>
+        {% for ingredient in ingredients %}
+            <li>{{ ingredient[0].capitalize() }} - {{ ingredient[1] }} occurences</li>
+        {% endfor %}
+    </ul>
+    
+    <a href="/">Scrape Another Recipe!</a>
+</body>
+</html>

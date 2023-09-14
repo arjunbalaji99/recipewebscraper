@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipe Ingredients Scraper</title>
+</head>
+<body>
+    <h1>Recipe Ingredients Scraper</h1>
+    <h2>Page Url: {{ url }}</h2>
+    <p>Scraping {{ len }} recipes...</p>
+    <p>ETA: {{ etatime }} seconds</p>
+</body>
+<script>
+    window.location.href = "{{ url_for('results', url=url) }}";
+</script>
+</html>
