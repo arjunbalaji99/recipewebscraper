@@ -1,5 +1,6 @@
 import re
 import requests
+import random
 import time
 from collections import Counter
 from bs4 import BeautifulSoup
@@ -18,6 +19,11 @@ def get_recipe_urls(page_url):
             recipe_urls.append(url)
     
     return recipe_urls
+
+def select_preselected_url():
+    preselected_urls = ["https://www.allrecipes.com/recipes/17561/lunch/", "https://www.allrecipes.com/recipes/84/healthy-recipes/", "https://www.allrecipes.com/recipes/76/appetizers-and-snacks/", "https://www.allrecipes.com/recipes/233/world-cuisine/asian/indian/"]
+    return preselected_urls[random.randint(0, len(preselected_urls) - 1)]
+
 
 #cleans up ingredient data to just the ingredient (removes all numbers, measurements, etc) - return cleaned ingredient
 def cleans_data(ingredient):
@@ -77,7 +83,7 @@ def user_interaction():
     page_url = input("If you have a specific recipes page you would like to scrape, input it here! If you do not, that is fine and we can just use one of our pre-selected pages - type NONE in that scenario!")
     time.sleep(1)
     if page_url == 'NONE':
-        page_url = 'https://www.allrecipes.com/recipes/17562/dinner/'
+        page_url = select_preselected_url()
         print("This is the page that will be scraped: " + page_url)
 
     all_ingredients = []

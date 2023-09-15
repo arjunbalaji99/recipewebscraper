@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from terminalversion import get_recipe_urls, calculate_most_common, scrape_recipe_data, calculate_eta
+from terminalversion import get_recipe_urls, calculate_most_common, scrape_recipe_data, calculate_eta, select_preselected_url
 
 #builds flask app
 app = Flask(__name__, static_url_path='/static', static_folder='static')
@@ -15,14 +15,12 @@ def eta():
     page_url = request.form['url']
 
     recipe_urls = get_recipe_urls(page_url)
-    etatime = 0.33 * len(recipe_urls)
-    etatime = '%.2f' % etatime
-    return render_template('eta.html', etatime = etatime, len = len(recipe_urls), url = page_url)
+    return render_template('eta.html', etatime = calculate_eta(recipe_urls), len = len(recipe_urls), url = page_url)
 
 #if user chooses a predefined url
 @app.route('/predefinedeta')
 def predefinedeta():
-    page_url = 'https://www.allrecipes.com/recipes/17562/dinner/'
+    page_url = select_preselected_url()
 
     recipe_urls = get_recipe_urls(page_url)
     return render_template('eta.html', etatime = calculate_eta(recipe_urls), len = len(recipe_urls), url = page_url)
