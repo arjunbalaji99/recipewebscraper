@@ -2,17 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Recipe Ingredients Scraper</title>
+    <title>Recipe Scraping Ingredient Compiler</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/index.css') }}">
 </head>
 <body>
-    <h1>Recipe Ingredients Scraper</h1>
-    <form method="POST" action="/eta">
+    <h1>Recipe Scraping Ingredient Compiler</h1>
+    <p>This Web Scraping Bot can take an allrecipies link and give you the 10 most common ingredients of all the recipes on the page! Try it out!</p>
+    <form class="inputform" method="POST" action="/eta">
         <label for="url">Enter AllRecipes URL:</label>
         <input type="text" id="url" name="url" required>
         <button type="submit">Submit</button>
     </form>
-    <form method="GET" action="/predefinedeta">
-        <button type="submit">Scrape Predefined URL</button>
+    <form class="buttomform" action="/predefinedeta">
+        <button type="submit">Scrape One of our Predefined URLs!</button>
     </form>
 </body>
 </html>

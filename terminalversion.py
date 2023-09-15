@@ -60,9 +60,16 @@ def scrape_recipe_data(recipe_url):
 def calculate_most_common(all_ingredients):
     return Counter(all_ingredients).most_common(10)
 
+#prints the most common ingredients in a neat format
 def print_most_common(most_common_ingredients):
     for ingredient in most_common_ingredients:
         print(str(ingredient[0]).capitalize() + " - " + str(ingredient[1]) + " occurrences")
+
+#calculates eta of scraping given a list of recipe urls
+def calculate_eta(recipe_urls):
+    etatime = 0.33 * len(recipe_urls)
+    etatime = '%.2f' % etatime
+    return etatime
 
 #handles all interaction with the user
 def user_interaction():
@@ -78,9 +85,9 @@ def user_interaction():
     recipe_urls = get_recipe_urls(page_url)
     time.sleep(2)
     print("Scraping " + str(len(recipe_urls)) + " recipes...")
-    eta = 0.33 * len(recipe_urls)
+    eta = calculate_eta(recipe_urls)
     time.sleep(1)
-    print("ETA: " + str('%.2f' % (eta)) + " seconds")
+    print("ETA: " + str(eta) + " seconds")
     for recipe_url in recipe_urls:
         title, ingredients = scrape_recipe_data(recipe_url)
         titles.append(title)

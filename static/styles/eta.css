@@ -1,0 +1,32 @@
+/* styles/eta.css */
+
+/* Reset some default browser styles */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+h1 {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+
+h2 {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+p {
+    font-size: 16px;
+    margin: 10px 0;
+}
