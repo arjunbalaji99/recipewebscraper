@@ -1,0 +1,4 @@
+Used the libraries beautifulsoup4, flask, requests
+Used various stackoverflow links for a few basic bug fixes
+Used ChatGPT for some CSS fixes and for a basic flask structure
+Credit to Rushil for idea to just scrape recipes off of a user inputted recipes page
