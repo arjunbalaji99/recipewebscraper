@@ -1,0 +1,2 @@
+For the Terminal Version of the App - simply just run the python file and operate it from the terminal
+For the Web App Version - run the command "python app.py" in the terminal - open the popup from flask in the web
